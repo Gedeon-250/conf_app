@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>list of conferences</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>email</th>
+          <th>description</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for conference in conferences%}
+        <tr>
+          <td>{{ conference.id }}</td>
+          <td>{{ conference.title}}</a</td>
+          <td>{{ conference.email }}</td>
+          <td>{{ conference.description}}</td>
+          <td><button>update</button>
+            <button>delete</button></td>
+
+        </tr>
+        {% endfor%}
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+Names                  REGNumber             DEPARTMENT
+
+Umwizerwa Gedeon       221017217              Information Technology
+Ashimwe Esther         221019114              Information Technology
