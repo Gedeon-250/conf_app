@@ -3,33 +3,112 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home page</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            cursor: pointer;
+        }
+        nav{
+            background-color: black;
+            width: 100%;
+            display: flex;
+            padding: 15px 90px;
+            align-items: center;
+        }
+        nav ul{
+            list-style-type: none;
+        }
+        nav ul li{
+            text-transform: capitalize;
+            font-size: 17px;
+            padding: 7px 16px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #f6f6f6;
+        }
+        .table-container{
+            margin: 20px;
+            padding: 20px;
+        }
+        .text-center{
+            text-align: center;
+        }
+        
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table > thead > tr > th {
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+  background-color: #efefef;
+}
+
+table > tbody > tr > td {
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid #efefef;
+  white-space: nowrap;
+}
+.btn-edit{
+    background-color: #00a762;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+}
+.btn-delete{
+    background-color:#b72424;;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+}
+
+    </style>
   </head>
   <body>
-    <h1>list of conferences</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>email</th>
-          <th>description</th>
-          <th>action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for conference in conferences%}
-        <tr>
-          <td>{{ conference.id }}</td>
-          <td>{{ conference.title}}</a</td>
-          <td>{{ conference.email }}</td>
-          <td>{{ conference.description}}</td>
-          <td><button>update</button>
-            <button>delete</button></td>
+    <nav class="navbar">
 
-        </tr>
-        {% endfor%}
-      </tbody>
-    </table>
+        <ul><li><a href="">home</a></li></ul>
+        <ul><li><a href="">conference</a></li></ul>
+    </nav>
+    <div class="table-container">
+        <h3 class="text-center">List of Conferences</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>email</th>
+              <th>description</th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for conference in conferences%}
+            <tr>
+              <td>{{ conference.id }}</td>
+              <td>{{ conference.title}}</a</td>
+              <td>{{ conference.email }}</td>
+              <td>{{ conference.description}}</td>
+              <td><a href="/conferences/{{ conference.id }}/update/" class="btn-edit">update</a>
+                <button class="btn-delete">delete</button></td>
+    
+            </tr>
+            {% endfor%}
+          </tbody>
+        </table>
+    </div>
+   
   </body>
 </html>
